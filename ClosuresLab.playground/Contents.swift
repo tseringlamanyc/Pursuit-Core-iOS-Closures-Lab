@@ -25,7 +25,7 @@ assert(myVal == 5, "Expected myVal to be five, but was \(myVal)")
 // Write a function called multiples(of:in) that takes in an array of Ints and returns all of the Ints that are a multiple of a given number n.  Use filter in your function.
 
 func multiples(of x: Int, in y: [Int]) -> [Int] {
-    var filterMultiple = y.filter { $0 % x == 0 }
+    let filterMultiple = y.filter { $0 % x == 0 }
     return filterMultiple
 }
 
@@ -41,21 +41,33 @@ assert(outputTwo == expectedOutputTwo, "Expected output to be \(expectedOutputTw
 
 // Write a function called largestValue(in:) that finds the largest Int in an array of Ints. Use reduce to solve this exercise.
 
-// Your function here
+func largestValue (in x: [Int]) -> Int {
+    var biggestNum = 0
+    let reducedInt = x.reduce(x[0]) {
+        if $0 > $1 {
+        biggestNum = $0
+        } else {
+        biggestNum = $1
+        }
+}
+ return biggestNum
+}
+ // Uncomment out the following lines to check your solution
 
-// Uncomment out the following lines to check your solution
-
-//let moreNumbers = [4, 7, 1, 9, 6, 5, 6, 9]
-//let expectedOutputThree = 9
-//let outputThree = largestValue(in: moreNumbers)
-//assert(outputThree == expectedOutputThree, "Expected output to be \(expectedOutputThree), but found \(outputThree)")
+let moreNumbers = [4, 7, 1, 9, 6, 5, 6, 9]
+let expectedOutputThree = 9
+let outputThree = largestValue(in: moreNumbers)
+assert(outputThree == expectedOutputThree, "Expected output to be \(expectedOutputThree), but found \(outputThree)")
 
 
 // Question Four
 
 // Write a function called sortedNamesByLastName(in:) that takes in an array of tuples of type (String, String) and returns an array of tuples sorted by last name.
 
-// Your function here
+func sortedNamesByLastName (in x: [(String)]) -> [(String)] {
+    var firstName = x.
+    var lastName
+}
 
 // Uncomment out the following lines to check your solution
 
@@ -94,4 +106,3 @@ assert(outputTwo == expectedOutputTwo, "Expected output to be \(expectedOutputTw
 //let expectedOutputFive = 35 // Explanation: 1 + 9 + 25 -> 35
 //let outputFive = sumOfSquaresOfOddNumbers(in: evenMoreNumbers)
 //assert(outputFive == expectedOutputFive, "Expected output to be \(expectedOutputFive), but found \(outputFive)")
-
