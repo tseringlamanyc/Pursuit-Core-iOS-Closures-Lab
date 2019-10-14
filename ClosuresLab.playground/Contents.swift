@@ -65,10 +65,10 @@ assert(outputThree == expectedOutputThree, "Expected output to be \(expectedOutp
 
 // Write a function called sortedNamesByLastName(in:) that takes in an array of tuples of type (String, String) and returns an array of tuples sorted by last name.
 
-//func sortedNamesByLastName (in x: [(String)]) -> [(String)] {
-//    var firstName = x.
-//    var lastName
-//}
+func sortedNamesByLastName (in x: [(firstname:String, lastname:String)]) -> [(String, String)] {
+    let orderTuple = x.sorted { $0.lastname < $1.lastname }
+    return orderTuple
+}
 
 // Uncomment out the following lines to check your solution
 
@@ -99,11 +99,18 @@ assert(outputThree == expectedOutputThree, "Expected output to be \(expectedOutp
 
 // Write a function called sumOfSquaresOfOddNumbers(in:) that returns the sum of the squares of all the odd numbers from an array of Ints.  Use filter, map and reduce in your function.
 
-// Your function here
-
+func sumOfSquaresOfOddNumbers (in arr: [Int]) -> Int {
+    var filterArr = [Int]()
+    var mapArr = [Int]()
+    var reduceArr = 0
+    filterArr = arr.filter { $0 % 2 == 1 }
+    mapArr = filterArr.map { $0 * $0 }
+    reduceArr = mapArr.reduce(0,+)
+    return reduceArr
+}
 // Uncomment out the following lines to check your solution
 
-//let evenMoreNumbers = [1, 2, 3, 4, 5, 6]
-//let expectedOutputFive = 35 // Explanation: 1 + 9 + 25 -> 35
-//let outputFive = sumOfSquaresOfOddNumbers(in: evenMoreNumbers)
-//assert(outputFive == expectedOutputFive, "Expected output to be \(expectedOutputFive), but found \(outputFive)")
+let evenMoreNumbers = [1, 2, 3, 4, 5, 6]
+let expectedOutputFive = 35 // Explanation: 1 + 9 + 25 -> 35
+let outputFive = sumOfSquaresOfOddNumbers(in: evenMoreNumbers)
+assert(outputFive == expectedOutputFive, "Expected output to be \(expectedOutputFive), but found \(outputFive)")
