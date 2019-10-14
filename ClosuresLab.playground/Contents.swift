@@ -43,15 +43,16 @@ assert(outputTwo == expectedOutputTwo, "Expected output to be \(expectedOutputTw
 
 func largestValue (in x: [Int]) -> Int {
     var biggestNum = 0
-    let reducedInt = x.reduce(x[0]) {
+    biggestNum = x.reduce(x[0]) {
         if $0 > $1 {
-        biggestNum = $0
+        return $0
         } else {
-        biggestNum = $1
+        return $1
         }
 }
  return biggestNum
 }
+
  // Uncomment out the following lines to check your solution
 
 let moreNumbers = [4, 7, 1, 9, 6, 5, 6, 9]
@@ -64,10 +65,10 @@ assert(outputThree == expectedOutputThree, "Expected output to be \(expectedOutp
 
 // Write a function called sortedNamesByLastName(in:) that takes in an array of tuples of type (String, String) and returns an array of tuples sorted by last name.
 
-func sortedNamesByLastName (in x: [(String)]) -> [(String)] {
-    var firstName = x.
-    var lastName
-}
+//func sortedNamesByLastName (in x: [(String)]) -> [(String)] {
+//    var firstName = x.
+//    var lastName
+//}
 
 // Uncomment out the following lines to check your solution
 
